@@ -24,9 +24,7 @@ namespace C0714696_assignment2
 public class DelegateExercises
 {
     public delegate void MyDelegate();
-
-
-    void Method1()
+    void Method1(int i)
     {
         Console.WriteLine("Method1");
         Console.ReadLine();
