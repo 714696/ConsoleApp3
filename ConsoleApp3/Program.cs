@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace C0714696_assignment2
 {
-    class Program
+    public class Program
     {
         public static void Main()
         {
@@ -20,33 +20,34 @@ namespace C0714696_assignment2
             Console.ReadLine();
         }
     }
+
+
+    public class DelegateExercises
+    {
+        public delegate int MyDelegate(int intValue);
+
+        int Method1(int intMethod1)
+        {
+            return intMethod1 * 2;
+        }
+        int Method2(int intMethod1)
+        {
+            return intMethod1 * 10;
+        }
+
+        public void Method4(MyDelegate myDelegate)
+        {
+            int result = myDelegate(10);
+            Console.WriteLine(result);
+        }
+
+        public void Method3()
+        {
+            MyDelegate myDelegate = new MyDelegate(Method1);
+            Method4(myDelegate);
+            myDelegate = new MyDelegate(Method2);
+            Method4(myDelegate);
+        }
+    }
+
 }
-
-public class DelegateExercises
-{
-    public delegate int MyDelegate(int intValue);
-   
-    int Method1(int intMethod1)
-    {
-        return intMethod1 * 2;
-    }
-    int method2(int intMethod1)
-    {
-        return intMethod1 * 10;
-    }
-
-    public void Method4(MyDelegate myDelegate)
-    {
-        int result = myDelegate(10);
-        Console.WriteLine(result);
-    }
-
-    public void Method3()
-    {
-        MyDelegate myDelegate = new MyDelegate(Method1);
-        Method4(myDelegate);
-        myDelegate = new MyDelegate(Method2);
-        Method4(myDelegate);
-    }
-}
-
